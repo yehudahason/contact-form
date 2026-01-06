@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  /* -------- Neutral -------- */
+  --grey-900: #2a4144;
+  --grey-500: #86a2a5;
+  --white: #ffffff;
+
+  /* -------- Green -------- */
+  --green-600: #0c7d69;
+  --green-200: #e0f1e8;
+
+  /* -------- Error -------- */
+  --red-500: #d73c3c;
+
+  /* ---------- Font family ---------- */
+  --font-primary: "Karla", sans-serif;
+
+  /* ---------- Heading ---------- */
+  --heading-lg: 700 32px/1 var(--font-primary);
+  --heading-lg-letter: -1px;
+
+  /* ---------- Body MD ---------- */
+  --body-md-bold: 700 18px/1.5 var(--font-primary);
+  --body-md-regular: 400 18px/1.5 var(--font-primary);
+  --body-md-letter: 0px;
+
+  /* ---------- Body SM ---------- */
+  --body-sm: 400 16px/1.5 var(--font-primary);
+  --body-sm-letter: 0px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #243b3a;
+}
+
+/* ---------- Background like the screenshot ---------- */
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background: #eaf3ef;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: min(760px, 100%);
+  background: #f6fbf8;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.title {
+  margin: 0 0 18px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Form layout ---------- */
+.form {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 620px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Labels & required star ---------- */
+label,
+legend {
+  font-size: 12px;
+  font-weight: 700;
+  color: #3a5451;
+}
+
+.req {
+  color: #1b8a73;
+  font-weight: 900;
+}
+
+/* ---------- Inputs ---------- */
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  border: 1.5px solid #98b7b1;
+  border-radius: 6px;
+  padding: 12px 12px;
+  background: #ffffff;
+  outline: none;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #157b68;
+  box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1);
+}
+
+/* ---------- Fieldset (Query Type) ---------- */
+.fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* “Radio boxes” */
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid #98b7b1;
+  border-radius: 6px;
+  padding: 12px 12px;
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.choice input {
+  width: 16px;
+  height: 16px;
+  accent-color: #157b68;
+}
+
+/* Optional: highlight when selected (modern browsers) */
+.choice:has(input:checked) {
+  border-color: #157b68;
+  box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1);
+}
+
+/* ---------- Consent ---------- */
+.consent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #3a5451;
+  cursor: pointer;
+  user-select: none;
+}
+
+.consent input {
+  width: 16px;
+  height: 16px;
+  accent-color: #157b68;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  margin-top: 6px;
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #0e7a66;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+.btn:active {
+  transform: translateY(1px);
+}

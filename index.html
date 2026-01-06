@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" aria-label="Contact form">
+        <h1 class="title">Contact Us</h1>
+
+        <form class="form" action="#" method="post">
+          <!-- First / Last -->
+          <div class="grid-2">
+            <div class="field">
+              <label for="firstName"
+                >First Name <span class="req">*</span></label
+              >
+              <input id="firstName" name="firstName" type="text" />
+            </div>
+
+            <div class="field">
+              <label for="lastName">Last Name <span class="req">*</span></label>
+              <input id="lastName" name="lastName" type="text" />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label for="email">Email Address <span class="req">*</span></label>
+            <input id="email" name="email" type="email" />
+          </div>
+
+          <!-- Query Type -->
+          <fieldset class="fieldset">
+            <legend>Query Type <span class="req">*</span></legend>
+
+            <div class="grid-2">
+              <label class="choice">
+                <input type="radio" name="queryType" value="general" />
+                <span>General Enquiry</span>
+              </label>
+
+              <label class="choice">
+                <input type="radio" name="queryType" value="support" />
+                <span>Support Request</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Message -->
+          <div class="field">
+            <label for="message">Message <span class="req">*</span></label>
+            <textarea id="message" name="message" rows="6"></textarea>
+          </div>
+
+          <!-- Consent -->
+          <label class="consent">
+            <input type="checkbox" name="consent" />
+            <span
+              >I consent to being contacted by the team
+              <span class="req">*</span></span
+            >
+          </label>
+
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
