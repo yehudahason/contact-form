@@ -27,6 +27,7 @@
 
   /* ---------- Body SM ---------- */
   --body-sm: 400 16px/1.5 var(--font-primary);
+  --body-s: 400 14px/1.5 var(--font-primary);
   --body-sm-letter: 0px;
 }
 
@@ -53,45 +54,48 @@ body {
 
 /* ---------- Card ---------- */
 .card {
-  width: min(760px, 100%);
+  width: min(736px, 100%);
   background: #f6fbf8;
   border-radius: 10px;
-  padding: 28px;
+  padding: 40px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Title */
 .title {
-  margin: 0 0 18px;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+  font: var(--heading-lg);
+  letter-spacing: var(--heading-lg-letter);
+  color: var(--grey-900);
 }
 
 /* ---------- Form layout ---------- */
 .form {
   display: grid;
-  gap: 16px;
+  gap: 24px;
 }
 
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 8px;
 }
 
 @media (max-width: 620px) {
   .grid-2 {
     grid-template-columns: 1fr;
   }
+  .card {
+    padding: 24px;
+  }
 }
 
 /* ---------- Labels & required star ---------- */
 label,
 legend {
-  font-size: 12px;
-  font-weight: 700;
-  color: #3a5451;
+  font: var(--body-sm);
+  letter-spacing: var(--body-sm-letter);
+  color: var(--grey-900);
 }
 
 .req {
@@ -111,15 +115,15 @@ textarea {
   width: 100%;
   border: 1.5px solid #98b7b1;
   border-radius: 6px;
-  padding: 12px 12px;
+  padding: 11px 12px;
   background: #ffffff;
   outline: none;
-  font-size: 14px;
+  font: var(--body-md-regular);
 }
 
 textarea {
   resize: none;
-  min-height: 140px;
+  height: 105px;
 }
 
 input:focus,
@@ -137,6 +141,9 @@ textarea:focus {
   gap: 10px;
 }
 
+legend {
+  margin-bottom: 16px;
+}
 /* “Radio boxes” */
 .choice {
   display: flex;
@@ -164,10 +171,12 @@ textarea:focus {
 
 /* ---------- Consent ---------- */
 .consent {
+  margin: 16px 0 16px;
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 12px;
+  font: var(--body-sm);
+  letter-spacing: var(--body-sm-letter);
   color: #3a5451;
   cursor: pointer;
   user-select: none;
@@ -181,15 +190,15 @@ textarea:focus {
 
 /* ---------- Button ---------- */
 .btn {
-  margin-top: 6px;
+  /* margin-top: 6px; */
   width: 100%;
   border: 0;
   border-radius: 8px;
-  padding: 14px 16px;
+  padding: 18px 16px;
   background: #0e7a66;
   color: #ffffff;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  font: var(--body-md-bold);
+  letter-spacing: var(--body-md-letter);
   cursor: pointer;
 }
 
