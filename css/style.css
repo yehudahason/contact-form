@@ -39,7 +39,7 @@
 }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  /* font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; */
   color: #243b3a;
 }
 
@@ -49,7 +49,7 @@ body {
   display: grid;
   place-items: center;
   padding: 28px 16px;
-  background: #eaf3ef;
+  background: var(--green-200);
 }
 
 /* ---------- Card ---------- */
@@ -72,22 +72,13 @@ body {
 /* ---------- Form layout ---------- */
 .form {
   display: grid;
-  gap: 24px;
+  gap: 2px;
 }
 
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-}
-
-@media (max-width: 620px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-  .card {
-    padding: 24px;
-  }
 }
 
 /* ---------- Labels & required star ---------- */
@@ -102,7 +93,11 @@ legend {
   color: #1b8a73;
   font-weight: 900;
 }
-
+.error {
+  color: var(--red-500);
+  font: var(--body-s);
+  /* margin-top: 4px; */
+}
 /* ---------- Inputs ---------- */
 .field {
   display: grid;
@@ -127,9 +122,11 @@ textarea {
 }
 
 input:focus,
-textarea:focus {
-  border-color: #157b68;
-  box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1);
+textarea:focus,
+input:hover,
+textarea:hover {
+  border: 1px solid var(--green-600);
+  /* box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1); */
 }
 
 /* ---------- Fieldset (Query Type) ---------- */
@@ -165,13 +162,14 @@ legend {
 
 /* Optional: highlight when selected (modern browsers) */
 .choice:has(input:checked) {
-  border-color: #157b68;
-  box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1);
+  border: 1px solid var(--green-600);
+  background-color: var(--green-200);
+  /* box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1); */
 }
 
 /* ---------- Consent ---------- */
 .consent {
-  margin: 16px 0 16px;
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -190,7 +188,7 @@ legend {
 
 /* ---------- Button ---------- */
 .btn {
-  /* margin-top: 6px; */
+  margin-top: 8px;
   width: 100%;
   border: 0;
   border-radius: 8px;
@@ -207,4 +205,17 @@ legend {
 }
 .btn:active {
   transform: translateY(1px);
+}
+
+@media (max-width: 620px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 24px;
+  }
+
+  textarea {
+    height: 240px;
+  }
 }
