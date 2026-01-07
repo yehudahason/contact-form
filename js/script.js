@@ -1,5 +1,5 @@
 const form = document.querySelector(".form");
-
+const successMessage = document.querySelector(".success-message");
 // inputs
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
@@ -7,6 +7,8 @@ const email = document.getElementById("email");
 const message = document.getElementById("message");
 const queryRadios = document.querySelectorAll('input[name="queryType"]');
 const consent = document.querySelector('input[name="consent"]');
+const consentError = document.getElementById("consent-error");
+const queryError = document.querySelector(".fieldset .error");
 
 // helpers
 function showError(element) {
@@ -52,9 +54,6 @@ form.addEventListener("submit", (e) => {
 
   // Query type (radio)
   const querySelected = [...queryRadios].some((radio) => radio.checked);
-
-  const queryError = document.querySelector(".fieldset .error");
-
   if (!querySelected) {
     queryError.style.visibility = "visible";
     isValid = false;
@@ -70,9 +69,6 @@ form.addEventListener("submit", (e) => {
     hideError(message);
   }
 
-  // Consent checkbox
-  const consentError = consent.closest("label").nextElementSibling;
-
   if (!consent.checked) {
     consentError.style.visibility = "visible";
     isValid = false;
@@ -82,7 +78,10 @@ form.addEventListener("submit", (e) => {
 
   // Submit if valid
   if (isValid) {
-    alert("Form submitted successfully!");
+    successMessage.classList.add("show");
     form.reset();
+    setTimeout(() => {
+      successMessage.classList.remove("show");
+    }, 5000);
   }
 });

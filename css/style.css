@@ -29,6 +29,7 @@
   --body-sm: 400 16px/1.5 var(--font-primary);
   --body-s: 400 14px/1.5 var(--font-primary);
   --body-sm-letter: 0px;
+  font-size: 16px;
 }
 
 /* ---------- Reset ---------- */
@@ -205,13 +206,47 @@ legend {
   font: var(--body-md-bold);
   letter-spacing: var(--body-md-letter);
   cursor: pointer;
+  transition: background-color 0.1s, transform 0.1s;
 }
 
 .btn:hover {
-  filter: brightness(1.05);
+  background-color: var(--grey-900);
 }
 .btn:active {
   transform: translateY(1px);
+}
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  opacity: 0;
+  padding: 16px 24px;
+  background-color: var(--grey-900);
+  width: min(500px, 90%);
+  height: auto;
+  color: white;
+  border-radius: 16px;
+}
+
+.success-message .md-title {
+  font: var(--body-md-bold);
+  letter-spacing: var(--body-md-letter);
+  color: white;
+  margin: 0 0 12px;
+  /* padding: 16px 0; */
+}
+
+.md-title img {
+  vertical-align: middle;
+}
+.success-message .body-md {
+  margin: 0;
+  color: white;
+  font: var(--body-sm);
+  text-align: left;
+}
+.success-message.show {
+  opacity: 1;
 }
 
 @media (max-width: 620px) {
