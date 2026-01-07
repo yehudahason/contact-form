@@ -172,7 +172,9 @@ legend {
 .choice:has(input:checked) {
   border: 1px solid var(--green-600);
   background-color: var(--green-200);
-  /* box-shadow: 0 0 0 4px rgba(21, 123, 104, 0.1); */
+}
+.choice:hover {
+  border: 1px solid var(--green-600);
 }
 
 /* ---------- Consent ---------- */
