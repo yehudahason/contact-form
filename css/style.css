@@ -96,6 +96,13 @@ legend {
 .error {
   color: var(--red-500);
   font: var(--body-s);
+  visibility: hidden;
+}
+
+.error-active .error {
+  visibility: visible;
+  color: var(--red-500);
+  font: var(--body-s);
   /* margin-top: 4px; */
 }
 /* ---------- Inputs ---------- */
