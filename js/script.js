@@ -9,6 +9,13 @@ const queryRadios = document.querySelectorAll('input[name="queryType"]');
 const consent = document.querySelector('input[name="consent"]');
 const consentError = document.getElementById("consent-error");
 
+firstName.addEventListener("input", validator);
+lastName.addEventListener("input", validator);
+email.addEventListener("input", validator);
+message.addEventListener("input", validator);
+queryRadios.forEach((q) => q.addEventListener("input", validator));
+consent.addEventListener("input", validator);
+
 //fieldset errors
 const queryError = document.querySelector(".fieldset .error");
 
@@ -29,11 +36,23 @@ function isEmailValid(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+let isValid;
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  // Submit if valid
+  validator(e);
+  if (isValid) {
+    successMessage.classList.add("show");
+    form.reset();
+    setTimeout(() => {
+      successMessage.classList.remove("show");
+    }, 5000);
+  }
+});
 
-  let isValid = true;
-
+function validator(e) {
+  isValid = true;
   // First name
   if (firstName.value.trim() === "") {
     showError(firstName);
@@ -87,13 +106,4 @@ form.addEventListener("submit", (e) => {
   } else {
     consentError.style.visibility = "hidden";
   }
-
-  // Submit if valid
-  if (isValid) {
-    successMessage.classList.add("show");
-    form.reset();
-    setTimeout(() => {
-      successMessage.classList.remove("show");
-    }, 5000);
-  }
-});
+}
