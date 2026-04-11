@@ -8,7 +8,7 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://yehudahason.github.io/contact-form/)
+- My solution at : [GitHub Pages](https://yehudahason.github.io/contact-form/)
 
 ## Author
 
